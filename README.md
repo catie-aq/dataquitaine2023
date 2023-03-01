@@ -5,26 +5,26 @@ Code pour la présentation de Dataquitaine 2023
 
 Code pour l'analyse de sentiments :
 
-- cls_finetuning.py : Finetuning d'un modèle pour de la classification binaire
+- [cls_finetuning.py](CLS/cls_finetuning.py) : Finetuning d'un modèle pour de la classification binaire
 
-- cls_prompt_mt0.py : Analyse de sentiments utilisant un prompt fixe avec un modèle mT0.
+- [cls_prompt_mt0.py](CLS/cls_prompt_mt0.py) : Analyse de sentiments utilisant un prompt fixe avec un modèle mT0.
 
-- cls_prompt_simple.py : Analyse de sentiments en utilisant un prompt simple et la librarie OpenPrompt adaptée pour les modèles français (<https://github.com/catie-aq/OpenPrompt/tree/french_prompts>).
+- [cls_prompt_simple.py](CLS/cls_prompt_simple.py) : Analyse de sentiments en utilisant un prompt simple et la librarie OpenPrompt adaptée pour les modèles français (<https://github.com/catie-aq/OpenPrompt/tree/french_prompts>).
 
-- cls_softprompt.py : Analyse de sentiments avec un prompt automatique (PTuning) et la librarie OpenPrompt.
+- [cls_softprompt.py](cls_softprompt.py) : Analyse de sentiments avec un prompt automatique (PTuning) et la librarie OpenPrompt.
 
 ## NER
 
-- ner_finetuning.py : Finetuning d'un modèle sur un problème de NER
+- [ner_finetuning.py](NER/ner_finetuning.py) : Finetuning d'un modèle sur un problème de NER
 
-- ner_prompt_mt0.py : NER utilisant des prompts et un modèle mT0
+- [ner_prompt_mt0.py](NER/ner_prompt_mt0.py) : NER utilisant des prompts et un modèle mT0
 
-- ner_prompt.py : NER avec des prompts simples "mots à mots"
+- [ner_prompt.py](NER/ner_prompt.py) : NER avec des prompts simples "mots à mots"
 
-- qa_ner_prompt.py : NER avec un modèle de Question-answering (<https://huggingface.co/CATIE-AQ/QAmembert>).
+- [qa_ner_prompt.py](NER/qa_ner_prompt.py) : NER avec un modèle de Question-answering (<https://huggingface.co/CATIE-AQ/QAmembert>).
 
 ## OrangeSum
 
-- orange-sum-finetuning.py : Génération de titre par finetuning
+- [orange-sum-finetuning.py](Orangesum/orange-sum-finetuning.py) : Génération de titre par finetuning
 
-- orange-sum-mt0.py: Génération de titres avec un prompt mT0.
+- [orange-sum-mt0.py](Orangesum/orange-sum-mt0.py): Génération de titres avec un prompt mT0.

@@ -6,10 +6,12 @@ import wandb
 from datasets import load_dataset
 from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer, AutoTokenizer, DataCollatorWithPadding
 
-# Load dataset from the hub
+## Load dataset from the hub
 dataset_train = load_dataset("flue", "CLS", split="train")
 dataset_test = load_dataset("flue", "CLS", split="test")
 dataset_test = dataset_test.shuffle(seed=32).select(range(500))
+
+## Load the model
 
 #model_name = "flaubert/flaubert_base_cased"
 #model_name = "camembert-base"
@@ -19,6 +21,7 @@ model_name ="flaubert/flaubert_large_cased"
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+## Tokenize the dataset
 def tokenize_function(examples):
     return tokenizer(examples["text"], max_length=480, truncation=True)
 
@@ -40,6 +43,7 @@ data_collator = DataCollatorWithPadding(tokenizer)
 metric = evaluate.load("accuracy")
 
 def compute_metrics(eval_pred):
+    # compute the accuracy
     logits, labels = eval_pred
     predictions = np.argmax(logits, axis=-1)
     return metric.compute(predictions=predictions, references=labels)
